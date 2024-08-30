@@ -8,11 +8,20 @@ const resolvers = {
         games(){
             return db.games
         },
-        authors(){
+        game(_, args){
+            return db.games.find((data) => data.id === args.id )
+        },
+            authors(){
             return db.authors
+        },
+        author(_, args){
+            return db.authors.find((data) => data.id === args.id )
         },
         reviews(){
             return db.reviews
+        },
+        review(_, args){
+            return db.reviews.find((data) => data.id === args.id )
         }
     }
 }
