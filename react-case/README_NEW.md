@@ -4,6 +4,11 @@ A basic React exploration project demonstrating fundamental concepts using **Tai
 
 ## 🚀 Features
 
+### Home Page
+- **Product Management**: Add products with name and quantity
+- **Sorting Capabilities**: Sort products by name (alphabetically) or by quantity (descending)
+- Clean, user-friendly interface built with Tailwind CSS
+
 ### Sorting Page
 - **Fruit List Management**: Add fruits with their quantities
 - **Dynamic Sorting**: Sort the fruit list by name in alphabetical order
@@ -13,6 +18,9 @@ A basic React exploration project demonstrating fundamental concepts using **Tai
 - **Real-time Input Display**: See your text appear instantly as you type
 - Demonstrates React state management and controlled components
 - Perfect example of immediate user feedback
+
+### About Page
+- Project information and additional details
 
 ### Error Page
 - Custom error handling for navigation and routing issues
@@ -37,8 +45,10 @@ A basic React exploration project demonstrating fundamental concepts using **Tai
 │   ├── App.css              # App styles
 │   ├── index.css            # Global styles
 │   └── pages/
+│       ├── Home.tsx         # Product management page
 │       ├── Sorting.tsx      # Fruit sorting page
 │       ├── TypeShow.tsx     # Real-time text display page
+│       ├── About.tsx        # About page
 │       └── Error.tsx        # Error page
 ├── public/                  # Static assets
 ├── package.json             # Project dependencies
@@ -103,6 +113,11 @@ npm run preview
 
 ## 📝 Example Use Cases
 
+### Adding a Product (Home Page)
+1. Enter product name and quantity
+2. Click "Add" to add to the list
+3. Use "Sort by Name" or "Sort by Quantity" to organize the list
+
 ### Managing Fruits (Sorting Page)
 1. Fill in fruit name and quantity
 2. Click add button to append to list
@@ -136,56 +151,3 @@ This project is part of the World Exploration collection.
 ---
 
 **Happy Exploring!** 🎉
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
